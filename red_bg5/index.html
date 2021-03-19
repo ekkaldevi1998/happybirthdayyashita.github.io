@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Background Animation | AnimeJS</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <p>See I Don't Have GF But Whatever Surprises Or Memories Or Quality Time Which I Wanted To Create, Yes I'll Definitely Create With You.. Also I Wanna Love You, Feed You, Care For You, Support Your Goals, Do Shit With You, Help You Out And Nap With You! By This I'll Never Feel That I Am Single And I Also Try The Same Thing For You, That You Shouldn't Feel That You Are Alone At Any Case And Have All The Experience Whatever You Want At This Age.. Coz This Life Is One Way Route So I'll Make Sure You'll Never Regret For Anything.. 
+
+                And Whatever Stupid Things I Did In This Whole Year Just Forgive Them Coz Somewhere It Happens In Unknowingly.. If I Apologize Not Because Every Time I'm Wrong. It's Because  I Seriously Don't Wanna Hurt And Loose You. So Try To Understand That If In Case Whatever Misunderstanding Occurs At Least Don't Leave Me Alone, We'll Try To Clear It.. Because No One Wants To Loose This Kind Of Bond With Any Confusion... </p>
+            <!-- <h2><span>My first video on</span><br>AnimeJS</h2> -->
+
+        </div>
+
+        <script src="anime.min.js"></script>
+        <script>
+            const container = document.querySelector('.container')
+            for (var i = 0; i<=100; i++){
+                const blocks = document.createElement('div');
+                blocks.classList.add('block');
+                container.appendChild(blocks);
+            }
+
+            function animateBlocks(){
+                anime({
+                    targets: '.block',
+                    translateX: function(){
+                        return anime.random(-700,700);
+                    },
+                    translateY: function(){
+                        return anime.random(-1000,1000);
+                    },
+                    scale: function(){
+                        return anime.random(1,5);
+                    },
+
+                    easing: 'linear',
+                    duration: 10000,
+                    delay: anime.stagger(-2),
+                    complete:animateBlocks,
+                })
+            }
+
+            animateBlocks()
+        </script>
+    </body>
+</html>
