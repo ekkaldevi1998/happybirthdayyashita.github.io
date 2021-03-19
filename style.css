@@ -1,14 +1,8 @@
-@import url('https://fonts.googleapis.com/ css?family=Poppins:300,400,500,600,700,800,900&disply=swap');
 *
 {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
-body
-{
-    background: #0a2a43!important;
-    min-height: 1500px;
+    font-family: consolas;
 }
 section
 {
@@ -16,173 +10,51 @@ section
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    background: #111;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-@media (min-width:900px){
-    .amol{
-        width: 100vw;
-        height: 100vh;
-    }
-}
-@media (max-width:901px){
-    .amol{
-        width:100vw;
-        height: 500px;
-    }
-}
-
-section:before
+section p
 {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height:100px;
-    background: linear-gradient(to top, #0a2a43, transparent);
-    z-index: 10000;
-}
-section:after
-{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #0a2a43;
-    z-index: 10000;
-    mix-blend-mode: color;
-}
-section img 
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
-} 
-#text
-{
-    position: relative;
-    color: rgb(18, 44, 59);
-    font-size: 4em;
-    z-index: 1;
+    font-size: 2em;
+    color: rgb(161, 158, 158);
     text-align: center;
-    max-width: 650px;
-}
-#road
-{
-    z-index: 2;
-}
-body
-{
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    min-height: 1500px;
-    flex-wrap: wrap;
-    background: #0a2a43;
-}
-.box
-{
-    position: relative;
-    width: 40px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #060c21;
-    margin: 9px;
-}
-.box:before
-{
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: #fff;
-    z-index: -1;
-}
-.box:after
-{
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: #fff;
-    z-index: -1;
-    filter: blur(40px);
-}
-.box:nth-child(9):before,
-.box:nth-child(9):after
-{
-    background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);
-}
-.box:nth-child(3):before,
-.box:nth-child(3):after
-{
-    background: linear-gradient(235deg,#ff005e,#010615,#fbff00);
-}
-.box:nth-child(6):before,
-.box:nth-child(6):after
-{
-    background: linear-gradient(235deg,#772aff,#010615,#2196F3);
-}
-.box:nth-child(4):before,
-.box:nth-child(4):after
-{
-    background: linear-gradient(235deg,#2affed,#010615,#f321d0);
-}
-.box:nth-child(5):before,
-.box:nth-child(5):after
-{
-    background: linear-gradient(235deg,#0fe71a,#010615,#f39f21);
-}
-.box:nth-child(8):before,
-.box:nth-child(8):after
-{
-    background: linear-gradient(235deg,#772aff,#010615,#f32121);
-}
-.box:nth-child(7):before,
-.box:nth-child(7):after
-{
-    background: linear-gradient(235deg,#e7a10a,#010615,#2196F3);
-}
-.box:nth-child(1):before,
-.box:nth-child(1):after
-{
-    background: linear-gradient(235deg,#772aff,#010615,#f32121);
-}
-.box:nth-child(2):before,
-.box:nth-child(2):after
-{
-    background: linear-gradient(235deg,#772aff,#010615,#f32121);
-}
-
-.box .glass
+}  
+section span
 {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    display: block;
-    background: rgba(255, 255, 255,.1);
+    bottom: -50px;
+    background: transparent;
+    border-radius: 50%;
     pointer-events: none;
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.5);
+    animation: animate 4s linear infinite;
 }
-.box 
+section span:before
 {
-    padding: 20px;
-    color: thistle;
-    font-size: 3em;
-
-
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.25) translate(-70%,-70%);
+    background: radial-gradient(#fff,transparent);
+    border-radius: 50%;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    99%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        transform: translateY(-1200%);
+        opacity: 1;
+    }
 }

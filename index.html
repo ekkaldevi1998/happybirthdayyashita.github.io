@@ -1,81 +1,32 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Moon Light Parallax Effects | vanilla Javascript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Realistic Bubbles</title>
         <link rel="stylesheet" href="style.css">
-        <!-- <link href="https://cdn.jsdelivr.nyet/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
-
-  </head>
-  <body>
-        <section class="amol">
-            <img src="bg.jpg" id="bg">
-            <img src="moon1.png" id="moon">
-            <img src="mountain.png" id="mountain">
-            <img src="road.png" id="road">
-            <h2 id="text">Happy Birthday</h2>
+    </head>
+    <body>
+        <section>
+            <p>Hey.. So Here Are Some Messages, I Know That I'm A Copycat Coz I Never Wrote Such A Brief Messages.. But When You Sent Me That Message, Really It Feels So Special And That Day I Knew Even A Wording Message Can Make Exceptional.. So Yes Here I'm With Brief Birthday Message In My Way And On Other Side Its Me, I Can't Equivalent With Your's So Ignore My Grammatical Mistakes 😂.</p>
         </section>
         <script type="text/javascript">
-            let bg = document.getElementById("bg");
-            let moon = document.getElementById("moon");
-            let mountain = document.getElementById("mountain");
-            let road = document.getElementById("road");
-            let text = document.getElementById("text");
+            function createBubble(){
+                const section = document.querySelector('section')
+                const createElement = document.createElement('span')
+                var size = Math.random() * 60;
 
-            window.addEventListener('scroll', function(){
-                var value = window.scrollY;
+                createElement.style.width = 20 + size + 'px';
+                createElement.style.height = 20 + size + 'px';
+                createElement.style.left = Math.random() * innerWidth + "px";
+                section.appendChild(createElement);
 
-                bg.style.top = value * 0.5 + 'px';
-                moon.style.left = -value * 0.5 + 'px';
-                mountain.style.top = -value * 0.15 + 'px';
-                road.style.top = value * 0.15 + 'px';
-                text.style.top = value + 1 + 'px';
-            })
+                setTimeout(() => {
+                    createElement.remove()
+                },4000)
+            }
+
+            setInterval(createBubble,50) 
         </script>
-
-
-    <div class="box">
-        <div class="glass"></div>
-        <div class="content">
-            <h2><a href="bubble1/index.html">Y</a></h2>
-        </div>
-    </div>    
-    <div class="box">
-        <div class="glass"></div>
-        <div class="content">
-            <h2><a href="snap2/index.html">A</a></h2>
-        </div>
-    </div>  
-    <div class="box">
-        <div class="glass"></div>
-        <div class="content">
-            <h2><a href="flying_text3/index.html">S</a></h2>
-        </div>
-    </div>  
-    <div class="box">
-        <div class="glass"></div>
-        <div class="content">
-            <h2><a href="light_focus4/index.html">H</a></h2>
-        </div>
-    </div>  
-    <div class="box">
-        <div class="glass"></div>
-        <div class="content">
-            <h2><a href="red_bg5/index.html">I</a></h2>
-        </div>
-    </div>  
-    <div class="box">
-        <div class="glass"></div>
-        <div class="content">
-            <h2><a href="smoke_effect6/index.html">T</a></h2>
-        </div>
-    </div>  
-    <div class="box">
-        <div class="glass"></div>
-        <div class="content">
-            <h2><a href="focus_point/index.html">A</a></h2>
-        </div>
-    </div>  
-        
     </body>
 </html>
